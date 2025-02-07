@@ -1,0 +1,37 @@
+<!-- comics.component.html -->
+<h1>Lista de Cómics</h1>
+
+<!-- Spinner de carga -->
+<div *ngIf="isLoading" class="loading-container">
+    <div class="spinner"></div>
+    <p>Cargando cómics...</p>
+  </div>
+
+<div class="comics-container">
+  <div class="comic" *ngFor="let comic of getPagedComics(); let i = index">
+    <h2>{{ comic.title }}</h2>
+    <img class="comic" [src]="comic.thumbnail.path" alt="Thumbnail of {{ comic.title }}" />
+    <div class="buttons">
+      <button (click)="addToFavorites(comic)">Agregar a Favorito</button>
+      <button (click)="viewDetails(comic)">Ver Detalle</button>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje si no hay cómics -->
+<div *ngIf="!isLoading && comics.length === 0">
+    <p>No hay cómics disponibles.</p>
+  </div>
+
+<!-- Barra de navegación -->
+<div class="pagination">
+  <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage <= 1">Anterior</button>
+  <span>Página {{ currentPage }} de {{ totalPages }}</span>
+  <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage >= totalPages">Siguiente</button>
+</div>
+
+
+
+
+
+

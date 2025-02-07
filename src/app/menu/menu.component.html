@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <span class="left">
+    <!-- Logo or Title -->
+    <a *ngIf="isInDashboard || isInFavorites" routerLink="Dashboard" mat-button>Mi App</a>
+  </span>
+
+  <span class="right">
+    <!-- Mostrar Login y Registrar si NO estamos en el Dashboard -->
+    <a *ngIf="!isInDashboard && !isInFavorites" routerLink="Login" mat-button>
+      <mat-icon>login</mat-icon> Login
+    </a>
+    <a *ngIf="!isInDashboard && !isInFavorites" routerLink="Register" mat-button>
+      <mat-icon>how_to_reg</mat-icon> Registrar
+    </a>
+
+    <!-- Mostrar Dashboard si NO estamos en Login ni Register -->
+    <a *ngIf="isInDashboard || isInFavorites" routerLink="Dashboard" mat-button>
+      <mat-icon>house</mat-icon> Inicio
+    </a>
+
+    <!-- Mostrar Cerrar Sesión y Favoritos si estamos en el Dashboard -->
+    <span class="logout-favorites">
+      <a *ngIf="isInDashboard || isInFavorites" routerLink="Favorites" mat-button>
+        <mat-icon>star</mat-icon> Favoritos
+      </a>
+      <a *ngIf="isInDashboard || isInFavorites" (click)="logout()" mat-button>
+        <mat-icon>exit_to_app</mat-icon> Cerrar Sesión
+      </a>
+    </span>
+  </span>
+</mat-toolbar>

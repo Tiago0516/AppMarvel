@@ -1,0 +1,11 @@
+<form>
+    <h2>Registro</h2>
+    <input type="text" placeholder="Nombre" [(ngModel)]="name" name="name" required>
+    <input type="text" placeholder="Identificación" [(ngModel)]="identification" name="identification" required>
+    <input type="email" placeholder="Correo" [(ngModel)]="email" name="email" required>
+    <input type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+    <button (click)="register()">Registrarse</button>
+  
+    
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>

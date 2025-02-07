@@ -1,0 +1,79 @@
+/* Estilos generales para el formulario */
+form {
+    background-color: #f9f9f9; /* Fondo claro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para el título del formulario */
+  form h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Estilo para los inputs */
+  form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Asegura que el padding no afecte al ancho */
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Estilo cuando el input está enfocado */
+  form input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Estilo para el botón */
+  form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff; /* Azul */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect para el botón */
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo para el mensaje de error */
+  form .error {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Estilos responsivos (para pantallas pequeñas) */
+  @media (max-width: 480px) {
+    form {
+      padding: 15px;
+    }
+  
+    form h2 {
+      font-size: 20px;
+    }
+  
+    form input, form button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
